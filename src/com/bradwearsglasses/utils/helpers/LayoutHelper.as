@@ -324,7 +324,7 @@ package com.bradwearsglasses.utils.helpers{
           nextTo(Position.from(Placement.RIGHT, align), scope,last_sprite, this_sprite,padding,attach)
         }
         last_sprite = this_sprite;
-      }			       
+      }
     }
 
     private static function is_placeable(d:*):Boolean {

@@ -50,7 +50,7 @@ package com.bradwearsglasses.utils.delay
       } catch (e:Error) {
         trace("Couldn't fire delayer: " + e.name + "(" + e.errorID + ")\n\n" + e.getStackTrace())
       }
-    }		
+    }
 
   }
 }

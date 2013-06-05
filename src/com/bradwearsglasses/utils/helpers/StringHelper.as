@@ -137,43 +137,42 @@ package com.bradwearsglasses.utils.helpers
 
   	private static const RFC3986_ENCODE:RegExp = /[^a-zA-Z0-9_.~-]/g;
   
-  	public static function encode_url_utf8(str:String):String { //don't encode http:// etc.
-  		if (!str || str=="") return ""
-  		var pieces:Array = str.split("/");
-  		var path:Array = (pieces.pop() as String).split(".")
-  		var extension:String = path.pop() as String
-  		var file:String = path.join(".")
-  		return pieces.join("/") + "/" + encode_UTF8(file) + "." + extension
-  	
-  	}
-  	
-  	public static function encode_utf8(str:String):String {
-  		if (!str) { return ""; }
-  		return encode_UTF8(str).replace(RFC3986_ENCODE, do_encode );
-  	}
-  	
-  	private static function do_encode():String {
-  		return "%"+(String(arguments[0])).charCodeAt().toString(16).toUpperCase();
-  	}
-  	
-  	private static function encode_UTF8 (s:String):String {
-  		var a:Number=-1, n:uint, A:uint= s.length;
-  		var utf:String = "";
-  		while (++a < A) {  
-  			n = s.charCodeAt (a);
-  			if (n < 128) {
-  				utf += String.fromCharCode (n);
-  			} else if ((n > 127) && (n < 2048)) {
-  				utf += String.fromCharCode ((n >> 6) | 192);
-  				utf += String.fromCharCode ((n & 63) | 128);
-  			} else {
-  				utf += String.fromCharCode ((n >> 12) | 224);
-  				utf += String.fromCharCode (((n >> 6) & 63) | 128);
-  				utf += String.fromCharCode ((n & 63) | 128);
-  			}
-  	}
-  		return utf;
-  	} 	
-	
+    public static function encode_url_utf8(str:String):String { //don't encode http:// etc.
+      if (!str || str=="") return ""
+      var pieces:Array = str.split("/");
+      var path:Array = (pieces.pop() as String).split(".")
+      var extension:String = path.pop() as String
+      var file:String = path.join(".")
+      return pieces.join("/") + "/" + encode_UTF8(file) + "." + extension
+    }
+
+    public static function encode_utf8(str:String):String {
+      if (!str) { return ""; }
+      return encode_UTF8(str).replace(RFC3986_ENCODE, do_encode );
+    }
+    
+    private static function do_encode():String {
+      return "%"+(String(arguments[0])).charCodeAt().toString(16).toUpperCase();
+    }
+    
+    private static function encode_UTF8 (s:String):String {
+      var a:Number=-1, n:uint, A:uint= s.length;
+      var utf:String = "";
+      while (++a < A) {  
+        n = s.charCodeAt (a);
+        if (n < 128) {
+          utf += String.fromCharCode (n);
+        } else if ((n > 127) && (n < 2048)) {
+          utf += String.fromCharCode ((n >> 6) | 192);
+          utf += String.fromCharCode ((n & 63) | 128);
+        } else {
+          utf += String.fromCharCode ((n >> 12) | 224);
+          utf += String.fromCharCode (((n >> 6) & 63) | 128);
+          utf += String.fromCharCode ((n & 63) | 128);
+        }
+      }
+      return utf;
+    } 
+
   }
 }

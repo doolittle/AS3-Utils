@@ -2,8 +2,7 @@ package com.bradwearsglasses.utils.debug
 {
   import com.bradwearsglasses.utils.helpers.DateHelper;
 
-  public class DebugTimer
-  {
+  public class DebugTimer {
     public var start:Date;
     private var label:String;
     public function DebugTimer(l:String=null){
@@ -17,6 +16,6 @@ package com.bradwearsglasses.utils.debug
       trace("\tTIMER:" + label + " " + m + " " + diff)
       return diff;
     }; 
-
+    
   }
 }
