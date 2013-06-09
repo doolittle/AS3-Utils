@@ -15,3 +15,7 @@ This library has basic tools for building an AS3 app. It includes functions to:
 * queue events to handle long processes asynchronously
 * communicate with http resources
 * a bunch of other stuff you may or may not need.
+
+This library was build to support miscellaneous Flash apps and probably has a lot of overlap with [as3/AS3-utils](https://github.com/as3/AS3-Utils). 
+
+This library is used by the open-source book [Between Page and Screen](https://github.com/doolittle/BetweenPageAndScreen) - a popup book of poetry that uses augmented reality. See a demo at [betweenpageandscreen.com](http://betweenpageandscreen.com)
