@@ -1,7 +1,8 @@
 .actionScriptProperties
 bin-debug/*
 html-template/*
-
+.idea/*
+*.iml
 
 #################
 ## Eclipse
